@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  --primary-color: #FF1493;
+  --secondary-color: #000000;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -17,13 +19,69 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  background-image: url('https://cdn.wallpapersafari.com/80/78/qaSJ03.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+}
+
+.glass-container {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 2px solid rgba(255, 20, 147, 0.3);
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #ff69b4;
+  transform: translateY(-2px);
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 20, 147, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.search-input:focus {
+  border-color: rgba(255, 20, 147, 0.5);
+  outline: none;
+}
+
+.search-input:hover {
+  border-color: rgba(255, 20, 147, 0.4);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.title-shine {
+  color: #FF1493;
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    135deg,
+    #FF1493 0%,
+    #FF69B4 50%,
+    #FF1493 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 3px black;
+  text-stroke: 3px black;
+  filter: drop-shadow(0 0 10px rgba(255,20,147,0.3));
+  text-shadow: 4px 4px 0px black;
 }
 
 @layer utilities {
